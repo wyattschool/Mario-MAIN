@@ -20,7 +20,7 @@ height = parseInt(height);
  */
 var pyramid = []
 function printPyramid(height) {
-	let space = " ";
+	let space = "..";
 	let spaces = 0;
 	let layer = "";
 	hh = height;
@@ -38,13 +38,17 @@ function printPyramid(height) {
 		pyramid[y]=(layer);
 		layer = "";
 		height = height-1;
-		
 	}
 }
 printPyramid(height);
 pogpog= height;
-
+let rowStr = "<p>";
 for(pog=0;pog<pogpog;pog++){
-	console.log(pyramid[pog]);
+	rowStr = "";
+	document.write("<br>")
+	rowStr = pyramid[pog];
+	// rowStr = rowStr + "<br>"
+	document.write(rowStr);
 }
-
+rowStr = document.getElementById("pyramid").innerText;
+rowStr = rowStr + "</p>";
