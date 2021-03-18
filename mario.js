@@ -1,7 +1,7 @@
 // TODO #2
 // Take in user input for the height
-let height = 0;
-height = prompt("How high should the pyramid be?",5);
+// let height = 0;
+/*height = prompt("How high should the pyramid be?",5);
 while (height<=1){
 	height = prompt("How high should the pyramid be?",5);
 }
@@ -18,37 +18,67 @@ height = parseInt(height);
  *      #####
  *     ######
  */
+var height = 0;
+console.log("First" + height);
+function determineHeightAndThenDrawPyramid() {
+	document.getElementById("pyramid").innerText = "";
+	height = document.getElementById("height").value;
+	height = parseInt(height) + 1;
+	console.log("Second" + height);
+	pogpog = height;
+	printPyramid();
+}
+
 var pyramid = []
-function printPyramid(height) {
-	let space = "..";
+function printPyramid() {
+	console.log("THE FREAKING HEIGHT IS " + height);
+	let space = ".";
 	let spaces = 0;
 	let layer = "";
+	console.log("Third" + height);
 	hh = height;
 	for(r=height;r>0;r--){
 
-		heightHeight=height + 1;
+		heightHeight=height +1;
 		for(h=0;h<heightHeight;h++){
 			layer=layer+"#";
 			}
-		for(i=hh;i>height; i--){
+		for(i=hh;i>height+1; i--){
 			layer=space+layer;
 			}
 	
-		let y = r -1
+		let y = r -1 ;
 		pyramid[y]=(layer);
 		layer = "";
+		console.log("Forth" + height);
 		height = height-1;
+		console.log("Fifth" + height);
 	}
-}
-printPyramid(height);
-pogpog= height;
-let rowStr = "<p>";
+
+// printPyramid(height);
+console.log("Sixth" + height);
+// document.getElementById("pyramid1").innerHTML = "<p>";
+console.log("pogpog=" + pogpog);
+let rowStr = "";
 for(pog=0;pog<pogpog;pog++){
-	rowStr = "";
-	document.write("<br>")
+	// rowStr = "";
+	
+	// document.write("<br>")
 	rowStr = pyramid[pog];
 	// rowStr = rowStr + "<br>"
-	document.write(rowStr);
+	//rowStr = rowStr + "<br>"
+	
+	pyramidID = pogpog;
+	//document.getElementById("pyramid").innerHTML = "<h4><div id=" +pyramidID +"></div></h4>"
+	//document.getElementById(pyramidID).innerHTML = rowStr;
+	console.log(rowStr);
+	rowStr = rowStr + "";
+	pyramid[pogpog-1] = ""; // takes out last line
+	document.getElementById("pyramid").innerHTML += "<p>" + rowStr +"<p>";
+	
 }
-rowStr = document.getElementById("pyramid").innerText;
-rowStr = rowStr + "</p>";
+//document.getElementById("pyramid2").innerHTML = "</p>";
+//console.log(rowStr);
+
+
+}
