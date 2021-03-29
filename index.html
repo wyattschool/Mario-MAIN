@@ -6,19 +6,25 @@
         #pyramid {
             line-height: 0;
             font-size: 30px;
+						text-align: center;
         }
 
         body {
             font-family: "Courier New", monospace;
             text-align: center;
+						background-color: green;
        }
+			 #height1 {
+				 font-weight: bold;
+			 }
+
     </style>
 </head>
-<body >
-    <h1>Mario 3</h1>
+<body onload="determineHeightAndThenDrawPyramid()">
+    <h1>Mario 4</h1>
 
     <br>
-
+		<div id="backback">
     <p>When you say</p>
 
     <p><strong>Draw a pyramid</strong></p>
@@ -27,18 +33,26 @@
 
     <br>
 
-    <label>How high?</label>
+    <label for="block_type">Choose block type:</label>
 
-    <input type="text" id="height"/>
+		<select onchange="determineHeightAndThenDrawPyramid()"name="block_type" id="block">
+			<option value="#">#</option>
+			<option value="@">@</option>
+			<option value="$">$</option>
+			<option value="X">X</option>
+		</select>
+
+		<label>How high?</label>
+
+    <input oninput="determineHeightAndThenDrawPyramid()" type="range" id="height" min="2" max="24" step="2" value="4"/>
+		<span id="height1">
 
     <br><br>
-
-    <button onclick="determineHeightAndThenDrawPyramid()">Draw a pyramid</button>
 
     <br><br>
 
     <h4><span id="pyramid"></span></h4>
-
+		</div>
     <script src="mario.js"></script>
 </body>
 </html>

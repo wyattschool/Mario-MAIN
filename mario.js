@@ -18,21 +18,30 @@ height = parseInt(height);
  *      #####
  *     ######
  */
-var height = 0;
+
+var height = 2;
+var block = "";
 console.log("First" + height);
 function determineHeightAndThenDrawPyramid() {
 	document.getElementById("pyramid").innerText = "";
 	height = document.getElementById("height").value;
+	document.getElementById("height1").innerHTML=height;
 	height = parseInt(height) + 1;
 	console.log("Second" + height);
 	pogpog = height;
+	displayHeight();
 	printPyramid();
+}
+
+function displayHeight() {
+	document.getElementById("height").innerHTML;
 }
 
 var pyramid = []
 function printPyramid() {
 	console.log("THE FREAKING HEIGHT IS " + height);
-	let space = ".";
+	block = document.getElementById("block").value;
+	let space = "&nbsp;";
 	let spaces = 0;
 	let layer = "";
 	console.log("Third" + height);
@@ -41,7 +50,7 @@ function printPyramid() {
 
 		heightHeight=height +1;
 		for(h=0;h<heightHeight;h++){
-			layer=layer+"#";
+			layer=layer+block;
 			}
 		for(i=hh;i>height+1; i--){
 			layer=space+layer;
