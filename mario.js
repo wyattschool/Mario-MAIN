@@ -30,6 +30,7 @@ function determineHeightAndThenDrawPyramid() {
 	console.log("Second" + height);
 	pogpog = height;
 	displayHeight();
+	console.clear();
 	printPyramid();
 }
 

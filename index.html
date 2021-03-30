@@ -1,38 +1,58 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <style>
-
+	 <link href="style.css" rel="stylesheet" type="text/css" />
+    <style> 
+				h1{
+					background-color:rgb(229,7,33);
+					padding:30px;
+					margin:0px;
+				}
+				#innerBox{
+						background-color:rgb(4, 156, 216);
+				}
         #pyramid {
             line-height: 0;
             font-size: 30px;
 						text-align: center;
+						
         }
 
         body {
             font-family: "Courier New", monospace;
             text-align: center;
-						background-color: green;
+						background-color: rgb(67, 176, 71);
+						margin:1px;
+						padding:1px;
        }
+				#backback{
+					background-color:rgb(251, 208, 0);
+					padding:0px;
+					font-weight: bold;
+					margin-top:25px;
+					margin-left:15%;
+					margin-right:15%;
+					border-style:solid;
+					border-width:5px 5px;
+					border-color:black;
+				}
+
 			 #height1 {
 				 font-weight: bold;
 			 }
+			 input[type=range] {
+  				height: 10px;
+					margin-top:10px;
+  				width: 20%;
+}
 
     </style>
 </head>
 <body onload="determineHeightAndThenDrawPyramid()">
-    <h1>Mario 4</h1>
-
-    <br>
+    <h1>Pyramid Slide</h1>
+    
 		<div id="backback">
-    <p>When you say</p>
-
-    <p><strong>Draw a pyramid</strong></p>
-
-    <p>I say:</p>
-
-    <br>
-
+		<div id="innerBox">
     <label for="block_type">Choose block type:</label>
 
 		<select onchange="determineHeightAndThenDrawPyramid()"name="block_type" id="block">
@@ -45,13 +65,11 @@
 		<label>How high?</label>
 
     <input oninput="determineHeightAndThenDrawPyramid()" type="range" id="height" min="2" max="24" step="2" value="4"/>
-		<span id="height1">
+		<span id="height1"></span>
+		</div>
+    <br>
 
-    <br><br>
-
-    <br><br>
-
-    <h4><span id="pyramid"></span></h4>
+    <h4 id="pyramid"></h4>
 		</div>
     <script src="mario.js"></script>
 </body>
